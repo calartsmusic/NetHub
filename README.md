@@ -5,6 +5,7 @@ Network Music Communication Library for SuperCollider
 
 
 Example usage:
+
 x = NetHub.new;
 
 // Setup a listener for the \knock command coming from Joe 
