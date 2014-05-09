@@ -77,6 +77,11 @@ NetHub {
 
 //////////// MESSAGING
 
+    // alias for sendAll()
+    toAll { | messageData |
+        this.sendAll(messageData);
+    }
+
     // Broadcast a message to all clients in your Dictionary
     sendAll { | messageData |
         clients.keyValuesDo({ | client, netAddress |
