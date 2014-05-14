@@ -2,7 +2,8 @@
 NetHub {
     var <>clients,
         hostName,
-        <receiverCallbacks;
+        <receiverCallbacks,
+        <clientBusses;
 
     *new {| hostName |
         ^super.new.init(hostName);
@@ -16,6 +17,7 @@ NetHub {
         });
 
         clients = Dictionary.new;
+        clientBusses = Dictionary.new;
         receiverCallbacks = Dictionary.new;
 
         this.setupNetwork();
@@ -95,6 +97,30 @@ NetHub {
         }, {
             "NetHub: You don't have any clients to send to".postln;
         });
+    }
+    
+
+    asBus { | name, mappingFunction, path |
+        var listener;
+        if(mappingFunction.isNil, {
+            mappingFunction = {|msg|
+                ^msg[1];
+            };
+        },{});
+
+        if(clientBusses[name].isNil, {
+            clientBusses[name.asSymbol] = Bus.control(Server.default, 1);
+        });
+
+        // make sure to add a way to clean these up later
+        listener = OSCdef((name.asString ++ "-busReceiver").asSymbol, { | msg |
+            var receivedValue = mappingFunction(msg);
+
+            clientBusses[name.asSymbol].set(receivedValue);
+        }, path );
+
+
+        ^clientBusses[name.asSymbol];
     }
 
 //////////// RECEIVERS and CALLBACKS
