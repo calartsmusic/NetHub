@@ -28,5 +28,14 @@ x.from(\joe, { arg msg;
 
 
 // Sending to Joe with any number of messages (as an array)
-x.to(\joe, [\path, "someString", 123, "etc"]);
+x.to(\joe, [\knock, "someString", 123, "etc"]);
+
+
+// To setup a listener for receiving from anyone
+x.setAllResponses({ arg msg;
+  "I just received a broadcast message".postln;
+}, \knock);
+
+// Sending to everyone with any number of messages (as an array)
+x.toAll([\knock, "someString", 123, "etc"]);
 </code></pre>

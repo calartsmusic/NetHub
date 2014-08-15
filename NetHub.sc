@@ -84,10 +84,10 @@ NetHub {
         this.sendAll(messageData);
     }
 
-    // Broadcast a message to all clients in your Dictionary
+    // Send a message to all clients in your Dictionary
     sendAll { | messageData |
         clients.keysValuesDo({ | client, netAddress |
-            netAddress.sendMsg(messageData);
+            this.sendTo(client, messageData);
         });
     }
 
@@ -140,7 +140,7 @@ NetHub {
     }
 
     setAllResponses {| responderFunc, path |
-        clients.keyValuesDo({ |clientName, netAddress|
+        clients.keysValuesDo({ |clientName, netAddress|
             OSCdef(clientName.asSymbol, responderFunc, path);
         });
     }
