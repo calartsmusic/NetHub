@@ -15,7 +15,8 @@ Example usage:
 <pre><code>
 // Setup a new NetHub object. This will automatically broadcast your IP to 
 // anyone else running NetHub on the network and register your computer with them.
-// This only needs to be run once. Anyone who connects later will automatically be connected to you, and you to them
+// This only needs to be run once. Anyone who connects later will automatically
+// be connected to you, and you to them
 x = NetHub.new;
 
 
