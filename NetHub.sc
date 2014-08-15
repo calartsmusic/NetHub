@@ -86,7 +86,7 @@ NetHub {
 
     // Broadcast a message to all clients in your Dictionary
     sendAll { | messageData |
-        clients.keyValuesDo({ | client, netAddress |
+        clients.keysValuesDo({ | client, netAddress |
             netAddress.sendMsg(messageData);
         });
     }
