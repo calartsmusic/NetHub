@@ -4,8 +4,8 @@ NetHub
 A peer-to-peer network music communication library for SuperCollider
 meant to eliminate setup woes by handling asynchronous connections and abstracting common features such as broadcasting message, maintaing a simpler syntax for clarity as well as quickness, and allowing one to easily connect between different platforms.
 
-Dependencies on the NetLib Quark - https://github.com/supercollider-quarks/NetLib
-which can be install in SC via the Quarks GUI:
+Depends on the NetLib Quark (https://github.com/supercollider-quarks/NetLib) 
+which can be installed in SuperCollider via the Quarks GUI:
 ```
 Quarks.gui
 ```
