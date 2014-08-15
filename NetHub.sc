@@ -103,7 +103,6 @@ NetHub {
             "NetHub: You don't have any clients to send to".postln;
         });
     }
-    
 
     asBus { | name, mappingFunction, path |
         var listener;
