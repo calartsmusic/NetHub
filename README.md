@@ -2,7 +2,7 @@ NetHub
 ======
 
 A peer-to-peer network music communication library for SuperCollider
-meant to eliminate setup woes by handling asynchronous connections and abstracting common features such as broadcasting message, maintaing a simpler syntax for clarity as well as quickness, and allowing one to easily connect between different platforms.
+to help reduce/eliminate setup configurations, handle asynchronous connections, abstract common features such as broadcasting messages, provide a simpler syntax for clarity as well as quickness, and allow one to easily connect between different platforms.
 
 Depends on the NetLib Quark (https://github.com/supercollider-quarks/NetLib) 
 which can be installed in SuperCollider via the Quarks GUI:
@@ -16,7 +16,7 @@ Example usage:
 // Setup a new NetHub object. This will automatically broadcast your IP to 
 // anyone else running NetHub on the network and register your computer with them.
 // This only needs to be run once. Anyone who connects later will automatically
-// be connected to you, and you to them
+// be connected to you, and you to them.
 x = NetHub.new;
 
 
