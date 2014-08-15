@@ -3,8 +3,11 @@ NetHub
 
 Network Music Communication Library for SuperCollider
 
-Dependencies: 
-NetLib Quark - https://github.com/supercollider-quarks/NetLib
+Dependencies on the NetLib Quark - https://github.com/supercollider-quarks/NetLib
+which can be install in SC via the Quarks GUI:
+```
+Quarks.gui
+```
 
 Example usage:
 
