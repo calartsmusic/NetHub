@@ -68,7 +68,7 @@ NetHub {
                 receivedName = msg[3].asString;
 
             msg.postln;
-            clients = clients.add(receivedName -> NetAddr(receivedIP, receivedPort));
+            clients = clients.add(receivedName.asSymbol -> NetAddr(receivedIP, receivedPort));
 
             // broadcast my ip back to the client
             NetAddr(receivedIP, receivedPort).sendMsg('/clientip', NetAddr.myIP, NetAddr.langPort, hostName);
