@@ -141,7 +141,7 @@ NetHub {
 
     setAllResponses {| responderFunc, path |
         clients.keysValuesDo({ |clientName, netAddress|
-            OSCdef(clientName.asSymbol, responderFunc, path);
+            this.setResponse(clientName.asSymbol, responderFunc, path.asSymbol);
         });
     }
 
